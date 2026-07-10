@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { BundleContext } from '../context/BundleContext'
+import { BundleContext } from '../context/bundleState'
 
 export function useBundle() {
   const context = useContext(BundleContext)

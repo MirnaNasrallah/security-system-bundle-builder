@@ -5,7 +5,7 @@ import Accordion from './components/Accordion/Accordion'
 import ProductCard from './components/ProductCard/ProductCard'
 import ReviewPanel from './components/ReviewPanel/ReviewPanel'
 import StepHeader from './components/StepHeader/StepHeader'
-import { BundleProvider } from './context/BundleContext'
+import BundleProvider from './context/BundleContext'
 import { useBundle } from './hooks/useBundle'
 
 function BundleBuilder() {
