@@ -9,42 +9,50 @@ import catalog from './data/catalog.json'
 import { useBundle } from './hooks/useBundle'
 
 function BundleBuilder() {
-  const { state, stepCounts, setExpandedStep } = useBundle()
+  const { state: { expandedStepId }, stepCounts, setExpandedStep } = useBundle()
   const allProducts = useMemo(() => [...catalog.products, ...catalog.plans], [])
-  const accordionItems = catalog.steps.map((step, index) => {
-    const products = allProducts.filter((product) => product.stepId === step.id)
-    const nextStep = catalog.steps[index + 1]
-    const expanded = state.expandedStepId === step.id
+  const accordionItems = useMemo(
+    () =>
+      catalog.steps.map((step, index) => {
+        const products = allProducts.filter((product) => product.stepId === step.id)
+        const nextStep = catalog.steps[index + 1]
+        const expanded = expandedStepId === step.id
 
-    return {
-      id: step.id,
-      header: (
-        <StepHeader
-          step={step}
-          totalSteps={catalog.steps.length}
-          selectedCount={stepCounts[step.id] || 0}
-          expanded={expanded}
-          onToggle={() => setExpandedStep(expanded ? null : step.id)}
-        />
-      ),
-      content: (
-        <>
-          <div className="step-products">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          {nextStep && (
-            <button className="next-step" type="button" onClick={() => setExpandedStep(nextStep.id)}>
-              Next: {nextStep.title}
-            </button>
-          )}
-        </>
-      ),
-    }
-  })
+        return {
+          id: step.id,
+          header: (
+            <StepHeader
+              step={step}
+              totalSteps={catalog.steps.length}
+              selectedCount={stepCounts[step.id] || 0}
+              expanded={expanded}
+              onToggle={() => setExpandedStep(expanded ? null : step.id)}
+            />
+          ),
+          content: (
+            <>
+              <div className="step-products">
+                {products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+              {nextStep && (
+                <button
+                  className="next-step"
+                  type="button"
+                  onClick={() => setExpandedStep(nextStep.id)}
+                >
+                  Next: {nextStep.title}
+                </button>
+              )}
+            </>
+          ),
+        }
+      }),
+    [allProducts, expandedStepId, setExpandedStep, stepCounts],
+  )
 
-  return <Accordion items={accordionItems} expandedId={state.expandedStepId} />
+  return <Accordion items={accordionItems} expandedId={expandedStepId} />
 }
 
 function App() {
