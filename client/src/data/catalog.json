@@ -1,0 +1,87 @@
+{
+  "steps": [
+    { "id": "cameras", "order": 1, "title": "Choose your cameras", "icon": "▣", "categoryKey": "cameras" },
+    { "id": "plan", "order": 2, "title": "Choose your plan", "icon": "♢", "categoryKey": "plan" },
+    { "id": "sensors", "order": 3, "title": "Choose your sensors", "icon": "◉", "categoryKey": "sensors" },
+    { "id": "protection", "order": 4, "title": "Add extra protection", "icon": "⌘", "categoryKey": "accessories" }
+  ],
+  "products": [
+    {
+      "id": "wyze-cam-v4", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam v4",
+      "description": "The clearest Wyze Cam ever made.", "learnMoreUrl": "#", "image": "/images/camera.svg",
+      "badge": { "label": "Save 22%" },
+      "variants": [
+        { "id": "white", "label": "White", "swatch": "#ffffff" },
+        { "id": "grey", "label": "Grey", "swatch": "#9b9b9b" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+      ],
+      "defaultVariantId": "white", "compareAtPrice": 35.98, "price": 27.98,
+      "editableInReview": true, "initialQuantities": { "white": 1 }
+    },
+    {
+      "id": "wyze-cam-pan-v3", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam Pan v3",
+      "description": "360° pan and 180° tilt security camera.", "learnMoreUrl": "#", "image": "/images/pan-camera.svg",
+      "badge": { "label": "Save 12%" },
+      "variants": [
+        { "id": "white", "label": "White", "swatch": "#ffffff" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+      ],
+      "defaultVariantId": "white", "compareAtPrice": 39.98, "price": 34.98,
+      "editableInReview": true, "initialQuantities": { "white": 2 }
+    },
+    {
+      "id": "wyze-floodlight-v2", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam Floodlight v2",
+      "description": "2K floodlight camera with a 160° wide-angle view.", "learnMoreUrl": "#", "image": "/images/floodlight.svg",
+      "badge": { "label": "Save 22%" },
+      "variants": [
+        { "id": "white", "label": "White", "swatch": "#ffffff" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+      ],
+      "defaultVariantId": "white", "compareAtPrice": 89.98, "price": 69.98,
+      "editableInReview": true, "initialQuantities": {}
+    },
+    {
+      "id": "wyze-duo-doorbell", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Duo Cam Doorbell",
+      "description": "Two cameras. Two views. Double the porch protection.", "learnMoreUrl": "#", "image": "/images/doorbell.svg",
+      "defaultVariantId": "default", "price": 69.98, "editableInReview": true, "initialQuantities": {}
+    },
+    {
+      "id": "wyze-battery-cam-pro", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Battery Cam Pro",
+      "description": "Protect anywhere. No power outlet or electrician needed.", "learnMoreUrl": "#", "image": "/images/battery-camera.svg",
+      "variants": [
+        { "id": "white", "label": "White", "swatch": "#ffffff" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+      ],
+      "defaultVariantId": "white", "price": 89.98, "editableInReview": true, "initialQuantities": {}
+    },
+    {
+      "id": "sense-motion-sensor", "stepId": "sensors", "reviewCategory": "Sensors", "title": "Wyze Sense Motion Sensor",
+      "description": "Detect movement throughout your home.", "image": "/images/sensor.svg",
+      "defaultVariantId": "default", "price": 29.99, "editableInReview": true, "initialQuantities": { "default": 2 }
+    },
+    {
+      "id": "sense-hub", "stepId": "sensors", "reviewCategory": "Sensors", "title": "Wyze Sense Hub (Required)",
+      "description": "Connect and control all Wyze sensors.", "image": "/images/hub.svg",
+      "badge": { "label": "Included" }, "defaultVariantId": "default", "compareAtPrice": 29.92,
+      "price": 0, "isFree": true, "editableInReview": true, "initialQuantities": { "default": 1 }
+    },
+    {
+      "id": "micro-sd-card", "stepId": "protection", "reviewCategory": "Accessories", "title": "Wyze MicroSD Card (256GB)",
+      "description": "Capture continuous local recordings.", "image": "/images/card.svg",
+      "defaultVariantId": "default", "price": 20.98, "editableInReview": true, "initialQuantities": { "default": 2 }
+    }
+  ],
+  "plans": [
+    {
+      "id": "cam-unlimited", "stepId": "plan", "reviewCategory": "Plan", "title": "Cam Unlimited",
+      "description": "Unlimited cameras with intelligent alerts and cloud video.", "image": "/images/plan.svg",
+      "defaultVariantId": "default", "compareAtPrice": 12.99, "price": 9.99, "billingPeriod": "mo",
+      "editableInReview": false, "initialQuantities": { "default": 1 }
+    }
+  ],
+  "summaryExtras": {
+    "shipping": { "label": "Fast Shipping", "compareAtPrice": 5.99, "price": 0, "isFree": true },
+    "guarantee": { "label": "100% satisfaction guarantee", "sublabel": "30-day hassle-free returns" },
+    "financingText": "as low as $19.19/mo"
+  }
+}
