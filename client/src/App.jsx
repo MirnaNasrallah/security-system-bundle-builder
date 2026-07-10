@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import './App.css'
 import Accordion from './components/Accordion/Accordion'
 import ProductCard from './components/ProductCard/ProductCard'
+import ReviewPanel from './components/ReviewPanel/ReviewPanel'
 import StepHeader from './components/StepHeader/StepHeader'
 import { BundleProvider } from './context/BundleContext'
 import catalog from './data/catalog.json'
@@ -55,7 +56,9 @@ function App() {
           <section className="builder-column" aria-label="Bundle builder">
             <BundleBuilder />
           </section>
-          <aside className="review-column" aria-label="Bundle review" />
+          <aside className="review-column" aria-label="Bundle review">
+            <ReviewPanel />
+          </aside>
         </div>
       </main>
     </BundleProvider>
