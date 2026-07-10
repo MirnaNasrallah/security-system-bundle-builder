@@ -1,11 +1,15 @@
-import { memo, useMemo } from 'react'
+import { memo, useMemo, useState } from 'react'
 import { useBundle } from '../../hooks/useBundle'
+import { usePersistedBundle } from '../../hooks/usePersistedBundle'
+import PriceTag from '../PriceTag/PriceTag'
 import ReviewLineItem from '../ReviewLineItem/ReviewLineItem'
 
 const categoryOrder = ['Cameras', 'Sensors', 'Accessories', 'Plan']
 
 function ReviewPanel() {
-  const { selectedItems } = useBundle()
+  const { catalog, selectedItems, totals } = useBundle()
+  const { saveNow } = usePersistedBundle()
+  const [message, setMessage] = useState('')
   const groups = useMemo(
     () =>
       categoryOrder.flatMap((category) => {
@@ -14,6 +18,14 @@ function ReviewPanel() {
       }),
     [selectedItems],
   )
+  const savings = totals.original - totals.current
+  const { shipping, guarantee, financingText } = catalog.summaryExtras
+
+  const handleCheckout = () => setMessage('Your bundle is ready for checkout.')
+  const handleSave = () => {
+    const saved = saveNow()
+    setMessage(saved ? 'Your system was saved.' : 'We could not save your system.')
+  }
 
   return (
     <div className="review-panel">
@@ -31,6 +43,38 @@ function ReviewPanel() {
             ))}
           </section>
         ))}
+      </div>
+      <div className="review-summary">
+        <div className="shipping-row">
+          <span className="shipping-row__icon" aria-hidden="true">♨</span>
+          <span>{shipping.label}</span>
+          <PriceTag
+            price={shipping.price}
+            compareAtPrice={shipping.compareAtPrice}
+            isFree={shipping.isFree}
+          />
+        </div>
+        <div className="guarantee-total">
+          <div className="guarantee-badge">
+            <strong>100%</strong>
+            <span>{guarantee.label}</span>
+          </div>
+          <div className="total-block">
+            <span className="financing-pill">{financingText}</span>
+            <PriceTag price={totals.current} compareAtPrice={totals.original} large />
+          </div>
+        </div>
+        <p className="guarantee-copy">{guarantee.sublabel}</p>
+        <p className="savings-copy">
+          Congrats! You&apos;re saving ${savings.toFixed(2)} on your security bundle!
+        </p>
+        <button className="checkout-button" type="button" onClick={handleCheckout}>
+          Checkout
+        </button>
+        <button className="save-button" type="button" onClick={handleSave}>
+          Save my system for later
+        </button>
+        <p className="action-message" aria-live="polite">{message}</p>
       </div>
     </div>
   )
