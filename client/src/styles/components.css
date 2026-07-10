@@ -1,0 +1,102 @@
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.quantity-stepper button {
+  display: grid;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 0.25rem;
+  background: var(--color-page);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.quantity-stepper button:hover:not(:disabled) {
+  color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.quantity-stepper button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.25rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.price-tag {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.price-tag del {
+  color: var(--color-subtle);
+}
+
+.price-tag strong {
+  color: var(--color-primary);
+}
+
+.price-tag__free {
+  color: var(--color-success) !important;
+}
+
+.price-tag--large {
+  font-size: 1.25rem;
+}
+
+.price-tag small {
+  font-size: 0.7em;
+}
+
+.variant-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.variant-selector button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  background: white;
+  font-size: 0.58rem;
+  cursor: pointer;
+}
+
+.variant-selector button.is-active {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.variant-swatch {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
