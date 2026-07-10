@@ -4,6 +4,13 @@
   padding: 38px 0 64px;
 }
 
+.loading-state {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  color: var(--color-muted);
+}
+
 .app-shell > h1 {
   margin: 0 0 var(--space-6);
   font-size: clamp(1.5rem, 2.5vw, 2rem);

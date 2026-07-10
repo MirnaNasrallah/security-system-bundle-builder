@@ -1,16 +1,21 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { getCatalog } from './api/catalog'
 import Accordion from './components/Accordion/Accordion'
 import ProductCard from './components/ProductCard/ProductCard'
 import ReviewPanel from './components/ReviewPanel/ReviewPanel'
 import StepHeader from './components/StepHeader/StepHeader'
 import { BundleProvider } from './context/BundleContext'
-import catalog from './data/catalog.json'
 import { useBundle } from './hooks/useBundle'
 
 function BundleBuilder() {
-  const { state: { expandedStepId }, stepCounts, setExpandedStep } = useBundle()
-  const allProducts = useMemo(() => [...catalog.products, ...catalog.plans], [])
+  const {
+    catalog,
+    state: { expandedStepId },
+    stepCounts,
+    setExpandedStep,
+  } = useBundle()
+  const allProducts = useMemo(() => [...catalog.products, ...catalog.plans], [catalog])
   const accordionItems = useMemo(
     () =>
       catalog.steps.map((step, index) => {
@@ -49,13 +54,23 @@ function BundleBuilder() {
           ),
         }
       }),
-    [allProducts, expandedStepId, setExpandedStep, stepCounts],
+    [allProducts, catalog, expandedStepId, setExpandedStep, stepCounts],
   )
 
   return <Accordion items={accordionItems} expandedId={expandedStepId} />
 }
 
 function App() {
+  const [catalog, setCatalog] = useState(null)
+
+  useEffect(() => {
+    getCatalog().then(setCatalog)
+  }, [])
+
+  if (!catalog) {
+    return <div className="loading-state">Building your security options…</div>
+  }
+
   return (
     <BundleProvider catalog={catalog}>
       <main className="app-shell">
