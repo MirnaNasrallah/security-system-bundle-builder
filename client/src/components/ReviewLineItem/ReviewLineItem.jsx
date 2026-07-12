@@ -15,17 +15,19 @@ function ReviewLineItem({ item }) {
   )
 
   return (
-    <div className="review-line">
-      <img
-        src={item.image}
-        alt=""
-        onError={(event) => {
-          event.currentTarget.src = '/images/product.svg'
-        }}
-      />
-      <div className="review-line__name">
-        <span>{item.title}</span>
-        {item.variantLabel && <small>{item.variantLabel}</small>}
+    <div className={`review-line review-line--${item.reviewCategory.toLowerCase()}`}>
+      <div className="review-line__product">
+        <img
+          src={item.image}
+          alt=""
+          onError={(event) => {
+            event.currentTarget.src = '/images/product.svg'
+          }}
+        />
+        <div className="review-line__name">
+          <span>{item.title}</span>
+          {item.variantLabel && <small>{item.variantLabel}</small>}
+        </div>
       </div>
       {item.editableInReview ? (
         <QuantityStepper

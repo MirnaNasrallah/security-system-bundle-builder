@@ -6,7 +6,10 @@ function PriceTag({ price, compareAtPrice, isFree = false, period, large = false
   return (
     <span className={`price-tag${large ? ' price-tag--large' : ''}`}>
       {compareAtPrice != null && compareAtPrice > price && (
-        <del>{currency.format(compareAtPrice)}</del>
+        <del>
+          {currency.format(compareAtPrice)}
+          {period && <small>/{period}</small>}
+        </del>
       )}
       <strong className={isFree ? 'price-tag__free' : ''}>
         {isFree ? 'FREE' : currency.format(price)}
