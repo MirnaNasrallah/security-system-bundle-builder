@@ -30,7 +30,7 @@ function BundleProvider({ catalog, children, initialState }) {
       const variant = item.variants?.find((entry) => entry.id === variantId)
       return [{
         ...item,
-        image: variant?.thumbnail || variant?.image || item.image,
+        image: item.reviewImage || variant?.thumbnail || variant?.image || item.image,
         variantId,
         variantLabel: variant?.label,
         quantity,

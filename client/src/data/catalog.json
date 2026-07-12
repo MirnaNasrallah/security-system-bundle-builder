@@ -75,6 +75,7 @@
     {
       "id": "cam-unlimited", "stepId": "plan", "reviewCategory": "Plan", "title": "Cam Unlimited",
       "description": "Unlimited cameras with intelligent alerts and cloud video.", "image": "/images/plan.svg",
+      "reviewImage": "/images/cam-unlimited.svg",
       "defaultVariantId": "default", "compareAtPrice": 12.99, "price": 9.99, "billingPeriod": "mo",
       "editableInReview": false, "initialQuantities": { "default": 1 }
     }
