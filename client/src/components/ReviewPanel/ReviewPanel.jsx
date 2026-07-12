@@ -55,28 +55,35 @@ function ReviewPanel() {
             isFree={shipping.isFree}
           />
         </div>
-        <div className="guarantee-total">
-          <img
-            className="guarantee-badge"
-            src="/images/991e1497c0a1c9e070778c8eb0abab6e98ddb05a.png"
-            alt={guarantee.label}
-          />
-          <div className="total-block">
-            <span className="financing-pill">{financingText}</span>
-            <PriceTag price={totals.current} compareAtPrice={totals.original} large />
+        <div className="checkout-details">
+          <div className="guarantee-total">
+            <div className="guarantee-details">
+              <img
+                className="guarantee-badge"
+                src="/images/991e1497c0a1c9e070778c8eb0abab6e98ddb05a.png"
+                alt={guarantee.label}
+              />
+              <p className="guarantee-copy">
+                <strong>{guarantee.title}</strong>
+                <span>{guarantee.description}</span>
+              </p>
+            </div>
+            <div className="total-block">
+              <span className="financing-pill">{financingText}</span>
+              <PriceTag price={totals.current} compareAtPrice={totals.original} large />
+            </div>
           </div>
+          <p className="savings-copy">
+            Congrats! You&apos;re saving ${savings.toFixed(2)} on your security bundle!
+          </p>
+          <button className="checkout-button" type="button" onClick={handleCheckout}>
+            Checkout
+          </button>
+          <button className="save-button" type="button" onClick={handleSave}>
+            Save my system for later
+          </button>
+          {message && <p className="action-message" aria-live="polite">{message}</p>}
         </div>
-        <p className="guarantee-copy">{guarantee.sublabel}</p>
-        <p className="savings-copy">
-          Congrats! You&apos;re saving ${savings.toFixed(2)} on your security bundle!
-        </p>
-        <button className="checkout-button" type="button" onClick={handleCheckout}>
-          Checkout
-        </button>
-        <button className="save-button" type="button" onClick={handleSave}>
-          Save my system for later
-        </button>
-        {message && <p className="action-message" aria-live="polite">{message}</p>}
       </div>
     </div>
   )

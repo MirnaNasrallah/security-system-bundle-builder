@@ -559,6 +559,11 @@
   object-fit: contain;
 }
 
+.guarantee-details {
+  display: flex;
+  align-items: center;
+}
+
 .total-block {
   display: flex;
   flex-direction: column;
@@ -576,10 +581,15 @@
 }
 
 .guarantee-copy {
-  margin: -18px 0 18px;
+  display: none;
+  margin: 0;
   color: #1f1f1f;
   font-size: 12px;
-  text-align: right;
+}
+
+.guarantee-copy strong,
+.guarantee-copy span {
+  display: block;
 }
 
 .savings-copy {
@@ -744,9 +754,9 @@
   .review-panel {
     display: grid;
     min-height: 0;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 486px);
     grid-template-rows: auto auto auto auto auto auto;
-    column-gap: 42px;
+    column-gap: 25px;
     padding: 30px 50px;
   }
 
@@ -770,39 +780,98 @@
     grid-column: 1;
   }
 
-  .guarantee-total,
-  .guarantee-copy,
-  .savings-copy,
-  .checkout-button,
-  .save-button,
-  .action-message {
+  .checkout-details {
     grid-column: 2;
+    grid-row: 1 / span 6;
+    display: flex;
+    width: 100%;
+    max-width: 486px;
+    flex-direction: column;
+    justify-self: end;
   }
 
   .guarantee-total {
-    grid-row: 2 / span 2;
+    display: flex;
+    height: 179px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
     margin-top: 0;
+  }
+
+  .guarantee-details {
+    display: flex;
+    height: 131px;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .guarantee-badge {
+    width: 131px;
+    height: 131px;
+    flex: 0 0 131px;
   }
 
   .guarantee-copy {
-    grid-row: 4;
-    align-self: start;
-    margin-top: 0;
+    display: block;
+    flex: 1;
+    margin: 0;
+    font-size: clamp(14px, 1.48vw, 18px);
+    line-height: 110%;
+    letter-spacing: 0.6px;
+  }
+
+  .guarantee-copy strong {
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .total-block {
+    width: 100%;
+    height: 32px;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .financing-pill {
+    display: inline-flex;
+    width: 145px;
+    height: 27px;
+    flex: 0 0 145px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+  }
+
+  .total-block .price-tag--large del {
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  .total-block .price-tag--large strong {
+    font-size: 28px;
+    line-height: 32px;
   }
 
   .savings-copy {
-    grid-row: 5;
-    align-self: end;
-    margin-bottom: 58px;
-  }
-
-  .checkout-button {
-    grid-row: 5;
-    align-self: end;
+    height: 14px;
+    margin: 10px 0 4px;
+    font-size: 14px;
+    line-height: 14px;
   }
 
   .save-button {
-    grid-row: 6;
+    height: 17px;
+    margin-top: 8px;
+    padding: 0;
   }
 }
 

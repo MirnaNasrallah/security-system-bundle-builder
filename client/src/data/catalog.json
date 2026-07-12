@@ -82,7 +82,11 @@
   ],
   "summaryExtras": {
     "shipping": { "label": "Fast Shipping", "compareAtPrice": 5.99, "price": 0, "isFree": true },
-    "guarantee": { "label": "100% satisfaction guarantee", "sublabel": "30-day hassle-free returns" },
+    "guarantee": {
+      "label": "100% satisfaction guarantee",
+      "title": "30-day hassle-free returns",
+      "description": "If you're not totally in love with the product, we will refund you 100%."
+    },
     "financingText": "as low as $19.19/mo"
   }
 }
