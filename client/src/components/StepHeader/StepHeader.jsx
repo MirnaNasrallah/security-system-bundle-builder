@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import StepIcon from './StepIcon'
 
 function StepHeader({ step, totalSteps, selectedCount, expanded, onToggle }) {
   return (
@@ -14,7 +15,7 @@ function StepHeader({ step, totalSteps, selectedCount, expanded, onToggle }) {
       </span>
       <span className="step-header__row">
         <span className="step-header__title">
-          <span aria-hidden="true">{step.icon}</span>
+          <span><StepIcon name={step.icon} /></span>
           {step.title}
         </span>
         <span className="step-header__status">

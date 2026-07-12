@@ -1,9 +1,9 @@
 {
   "steps": [
-    { "id": "cameras", "order": 1, "title": "Choose your cameras", "icon": "▣", "categoryKey": "cameras" },
-    { "id": "plan", "order": 2, "title": "Choose your plan", "icon": "♢", "categoryKey": "plan" },
-    { "id": "sensors", "order": 3, "title": "Choose your sensors", "icon": "◉", "categoryKey": "sensors" },
-    { "id": "protection", "order": 4, "title": "Add extra protection", "icon": "⌘", "categoryKey": "accessories" }
+    { "id": "cameras", "order": 1, "title": "Choose your cameras", "icon": "camera", "categoryKey": "cameras" },
+    { "id": "plan", "order": 2, "title": "Choose your plan", "icon": "shield", "categoryKey": "plan" },
+    { "id": "sensors", "order": 3, "title": "Choose your sensors", "icon": "sensor", "categoryKey": "sensors" },
+    { "id": "protection", "order": 4, "title": "Add extra protection", "icon": "protection", "categoryKey": "accessories" }
   ],
   "products": [
     {

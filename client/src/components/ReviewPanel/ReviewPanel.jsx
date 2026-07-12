@@ -3,6 +3,7 @@ import { useBundle } from '../../hooks/useBundle'
 import { usePersistedBundle } from '../../hooks/usePersistedBundle'
 import PriceTag from '../PriceTag/PriceTag'
 import ReviewLineItem from '../ReviewLineItem/ReviewLineItem'
+import ShippingIcon from './ShippingIcon'
 
 const categoryOrder = ['Cameras', 'Sensors', 'Accessories', 'Plan']
 
@@ -46,7 +47,7 @@ function ReviewPanel() {
       </div>
       <div className="review-summary">
         <div className="shipping-row">
-          <span className="shipping-row__icon" aria-hidden="true">♨</span>
+          <span className="shipping-row__icon"><ShippingIcon /></span>
           <span>{shipping.label}</span>
           <PriceTag
             price={shipping.price}

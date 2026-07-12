@@ -27,13 +27,15 @@ function ReviewLineItem({ item }) {
         <span>{item.title}</span>
         {item.variantLabel && <small>{item.variantLabel}</small>}
       </div>
-      {item.editableInReview && (
+      {item.editableInReview ? (
         <QuantityStepper
           value={item.quantity}
           onIncrement={increment}
           onDecrement={decrement}
           label={`${item.title} quantity`}
         />
+      ) : (
+        <span className="review-line__stepper-space" aria-hidden="true" />
       )}
       <PriceTag
         price={item.price * item.quantity}
