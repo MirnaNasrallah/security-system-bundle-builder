@@ -68,7 +68,7 @@ function App() {
   }, [])
 
   if (!catalog) {
-    return <div className="loading-state">Building your security options…</div>
+    return <div className="loading-state" role="status" aria-live="polite">Building your security options…</div>
   }
 
   return (

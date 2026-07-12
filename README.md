@@ -11,7 +11,7 @@ A responsive, catalog-driven React bundle builder backed by an optional Express 
 
 ```bash
 cd client
-npm install
+npm ci
 cp .env.example .env
 npm run dev
 ```
@@ -24,7 +24,7 @@ In a second terminal:
 
 ```bash
 cd server
-npm install
+npm ci
 npm start
 ```
 
@@ -43,8 +43,17 @@ npm run build
 - `BundleProvider` owns normalized quantities, active variants, and the expanded step.
 - Derived selections and totals are memoized instead of duplicated in state.
 - A selected variant remains in the review when another variant becomes active.
-- Browser persistence is isolated behind `utils/storage.js` and debounced by `usePersistedBundle`.
+- Saved configurations are validated against the current catalog before they initialize the bundle state.
+- Browser persistence is isolated behind `utils/storage.js`; configuration is written when the shopper selects **Save my system for later**.
 - The API catalog manifest points to the bundled catalog, keeping one source of truth while retaining the requested server data boundary.
 - CSS custom properties define the visual system; the same component tree reflows across desktop, tablet, and mobile.
 
-Checkout is intentionally a confirmation placeholder. Product artwork uses a local neutral device illustration so the project has no third-party image dependency.
+## Decisions and tradeoffs
+
+- Checkout intentionally displays a confirmation because payment and order APIs are outside the prototype scope.
+- Product and guarantee artwork is stored locally so the UI does not depend on third-party image hosting.
+- The client works without the optional API by falling back to its bundled JSON catalog.
+- The optional server manifest references the client catalog to avoid maintaining duplicate product data, so the server is intended to run from the full repository.
+- The typography stack prefers Gilroy and uses platform fallbacks when that proprietary font is unavailable.
+
+All requested bundle-builder interactions are implemented. Automated browser tests are not included; `npm run lint` and `npm run build` are the provided quality gates.

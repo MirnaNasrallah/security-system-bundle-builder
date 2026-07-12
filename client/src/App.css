@@ -12,7 +12,14 @@
 }
 
 .app-shell > h1 {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .builder-layout {
@@ -45,9 +52,14 @@
   }
 
   .app-shell > h1 {
-    display: block;
+    position: static;
+    width: auto;
+    height: auto;
     margin: 0;
     padding: 0 20px 24px;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
     color: #1f1f1f;
     font-size: 22px;
     line-height: 22px;

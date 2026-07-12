@@ -4,6 +4,7 @@ import StepIcon from './StepIcon'
 function StepHeader({ step, totalSteps, selectedCount, expanded, onToggle }) {
   return (
     <button
+      id={`step-header-${step.id}`}
       className="step-header"
       type="button"
       onClick={onToggle}

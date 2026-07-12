@@ -109,6 +109,7 @@
   font-size: 10px;
   letter-spacing: 0.6px;
   cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .variant-selector button.is-active {
@@ -154,6 +155,7 @@
   color: #0b0d10;
   text-align: left;
   cursor: pointer;
+  transition: background-color var(--transition-fast);
 }
 
 .step-header__eyebrow {
@@ -353,6 +355,38 @@
   line-height: 24px;
   font-weight: 600;
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .variant-selector button:hover {
+    border-color: #0aa288;
+  }
+
+  .step-header:hover {
+    background: rgb(78 47 210 / 4%);
+  }
+
+  .next-step:hover {
+    background: #4e2fd2;
+    color: #fff;
+  }
+
+  .checkout-button:hover {
+    background: #4023c7;
+  }
+
+  .save-button:hover {
+    color: #4e2fd2;
+  }
+}
+
+.next-step:active,
+.checkout-button:active {
+  transform: translateY(1px);
 }
 
 .review-column {
@@ -617,6 +651,9 @@
   font-size: 17px;
   line-height: 22px;
   font-weight: 700;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .save-button {
@@ -628,6 +665,7 @@
   line-height: 17px;
   font-style: italic;
   text-decoration: underline;
+  transition: color var(--transition-fast);
 }
 
 .action-message {

@@ -1,8 +1,19 @@
 import { useCallback, useMemo, useReducer } from 'react'
-import { BundleContext, bundleReducer, createInitialState } from './bundleState'
+import {
+  BundleContext,
+  bundleReducer,
+  createInitialState,
+  sanitizePersistedState,
+} from './bundleState'
+import { loadBundle } from '../utils/bundleStorage'
 
 function BundleProvider({ catalog, children, initialState }) {
-  const seed = useMemo(() => initialState || createInitialState(catalog), [catalog, initialState])
+  const seed = useMemo(() => {
+    const persistedState = initialState || loadBundle()
+    return persistedState
+      ? sanitizePersistedState(catalog, persistedState)
+      : createInitialState(catalog)
+  }, [catalog, initialState])
   const [state, dispatch] = useReducer(bundleReducer, seed)
 
   const setQuantity = useCallback((productId, variantId, value) => {
@@ -14,7 +25,6 @@ function BundleProvider({ catalog, children, initialState }) {
   const setExpandedStep = useCallback((stepId) => {
     dispatch({ type: 'setExpandedStep', stepId })
   }, [])
-  const hydrate = useCallback((savedState) => dispatch({ type: 'hydrate', state: savedState }), [])
 
   const itemsById = useMemo(
     () => new Map([...catalog.products, ...catalog.plans].map((item) => [item.id, item])),
@@ -68,11 +78,9 @@ function BundleProvider({ catalog, children, initialState }) {
       setQuantity,
       setActiveVariant,
       setExpandedStep,
-      hydrate,
     }),
     [
       catalog,
-      hydrate,
       selectedItems,
       setActiveVariant,
       setExpandedStep,
