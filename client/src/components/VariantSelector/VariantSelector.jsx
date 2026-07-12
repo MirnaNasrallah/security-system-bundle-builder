@@ -13,7 +13,11 @@ function VariantSelector({ variants, value, onChange }) {
           onClick={() => onChange(variant.id)}
           aria-pressed={variant.id === value}
         >
-          <span className="variant-swatch" style={{ backgroundColor: variant.swatch }} />
+          {variant.thumbnail || variant.image ? (
+            <img className="variant-image" src={variant.thumbnail || variant.image} alt="" />
+          ) : (
+            <span className="variant-swatch" style={{ backgroundColor: variant.swatch }} />
+          )}
           {variant.label}
         </button>
       ))}

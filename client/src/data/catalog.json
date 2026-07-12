@@ -8,66 +8,66 @@
   "products": [
     {
       "id": "wyze-cam-v4", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam v4",
-      "description": "The clearest Wyze Cam ever made.", "learnMoreUrl": "#", "image": "/images/camera.svg",
+      "description": "The clearest Wyze Cam ever made.", "learnMoreUrl": "#", "image": "/images/7377c4c026acb3c476e41ccec1e0376490ee2cb9.png",
       "badge": { "label": "Save 22%" },
       "variants": [
-        { "id": "white", "label": "White", "swatch": "#ffffff" },
-        { "id": "grey", "label": "Grey", "swatch": "#9b9b9b" },
-        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+        { "id": "white", "label": "White", "swatch": "#ffffff", "image": "/images/7377c4c026acb3c476e41ccec1e0376490ee2cb9.png", "thumbnail": "/images/483cbb867e0bd5a75fa3ea080af66126b709f997.png" },
+        { "id": "grey", "label": "Grey", "swatch": "#9b9b9b", "image": "/images/7377c4c026acb3c476e41ccec1e0376490ee2cb9.png", "thumbnail": "/images/2989bafdebb392f5c271645b0aa3977ff131a2f7.png" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a", "image": "/images/7377c4c026acb3c476e41ccec1e0376490ee2cb9.png", "thumbnail": "/images/dfa724c811c98887e295ddf6d1b842bf7f555246.png" }
       ],
       "defaultVariantId": "white", "compareAtPrice": 35.98, "price": 27.98,
       "editableInReview": true, "initialQuantities": { "white": 1 }
     },
     {
       "id": "wyze-cam-pan-v3", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam Pan v3",
-      "description": "360° pan and 180° tilt security camera.", "learnMoreUrl": "#", "image": "/images/pan-camera.svg",
+      "description": "360° pan and 180° tilt security camera.", "learnMoreUrl": "#", "image": "/images/6e1650a4902c8e51d612c6363434bb36c8d74688.png",
       "badge": { "label": "Save 12%" },
       "variants": [
-        { "id": "white", "label": "White", "swatch": "#ffffff" },
-        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+        { "id": "white", "label": "White", "swatch": "#ffffff", "image": "/images/6e1650a4902c8e51d612c6363434bb36c8d74688.png" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a", "image": "/images/6e1650a4902c8e51d612c6363434bb36c8d74688.png" }
       ],
-      "defaultVariantId": "white", "compareAtPrice": 39.98, "price": 34.98,
+      "defaultVariantId": "white", "compareAtPrice": 28.99, "price": 23.99,
       "editableInReview": true, "initialQuantities": { "white": 2 }
     },
     {
       "id": "wyze-floodlight-v2", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Cam Floodlight v2",
-      "description": "2K floodlight camera with a 160° wide-angle view.", "learnMoreUrl": "#", "image": "/images/floodlight.svg",
+      "description": "2K floodlight camera with a 160° wide-angle view for your garage.", "learnMoreUrl": "#", "image": "/images/96d92fa4f08e0bdd9fa6fd7b1e59231ec3d3d38b.png",
       "badge": { "label": "Save 22%" },
       "variants": [
-        { "id": "white", "label": "White", "swatch": "#ffffff" },
-        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+        { "id": "white", "label": "White", "swatch": "#ffffff", "image": "/images/96d92fa4f08e0bdd9fa6fd7b1e59231ec3d3d38b.png" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a", "image": "/images/96d92fa4f08e0bdd9fa6fd7b1e59231ec3d3d38b.png" }
       ],
       "defaultVariantId": "white", "compareAtPrice": 89.98, "price": 69.98,
       "editableInReview": true, "initialQuantities": {}
     },
     {
       "id": "wyze-duo-doorbell", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Duo Cam Doorbell",
-      "description": "Two cameras. Two views. Double the porch protection.", "learnMoreUrl": "#", "image": "/images/doorbell.svg",
+      "description": "Two cameras. Two views. Double the porch protection.", "learnMoreUrl": "#", "image": "/images/0d7c4e5400ad8bef25d0ac786f415794250cefd5.png",
       "defaultVariantId": "default", "price": 69.98, "editableInReview": true, "initialQuantities": {}
     },
     {
       "id": "wyze-battery-cam-pro", "stepId": "cameras", "reviewCategory": "Cameras", "title": "Wyze Battery Cam Pro",
-      "description": "Protect anywhere. No power outlet or electrician needed.", "learnMoreUrl": "#", "image": "/images/battery-camera.svg",
+      "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.", "learnMoreUrl": "#", "image": "/images/25ced552047f1e871354f9620f3a60c5948b3b1a.png",
       "variants": [
-        { "id": "white", "label": "White", "swatch": "#ffffff" },
-        { "id": "black", "label": "Black", "swatch": "#1a1a1a" }
+        { "id": "white", "label": "White", "swatch": "#ffffff", "image": "/images/25ced552047f1e871354f9620f3a60c5948b3b1a.png" },
+        { "id": "black", "label": "Black", "swatch": "#1a1a1a", "image": "/images/5a86d03ace4842214c1d63d582b0c618fc4bdedf.png" }
       ],
       "defaultVariantId": "white", "price": 89.98, "editableInReview": true, "initialQuantities": {}
     },
     {
       "id": "sense-motion-sensor", "stepId": "sensors", "reviewCategory": "Sensors", "title": "Wyze Sense Motion Sensor",
-      "description": "Detect movement throughout your home.", "image": "/images/sensor.svg",
+      "description": "Detect movement throughout your home.", "image": "/images/c5d210d5bb593396f4f1f51b5f3538c79613ef44.png",
       "defaultVariantId": "default", "price": 29.99, "editableInReview": true, "initialQuantities": { "default": 2 }
     },
     {
       "id": "sense-hub", "stepId": "sensors", "reviewCategory": "Sensors", "title": "Wyze Sense Hub (Required)",
-      "description": "Connect and control all Wyze sensors.", "image": "/images/hub.svg",
+      "description": "Connect and control all Wyze sensors.", "image": "/images/822f111b8d7505688a09b4d01cc536f6f009a8cd.png",
       "badge": { "label": "Included" }, "defaultVariantId": "default", "compareAtPrice": 29.92,
       "price": 0, "isFree": true, "editableInReview": true, "initialQuantities": { "default": 1 }
     },
     {
       "id": "micro-sd-card", "stepId": "protection", "reviewCategory": "Accessories", "title": "Wyze MicroSD Card (256GB)",
-      "description": "Capture continuous local recordings.", "image": "/images/card.svg",
+      "description": "Capture continuous local recordings.", "image": "/images/9f076fc4511198593abbc00cec845119c27f4406.png",
       "defaultVariantId": "default", "price": 20.98, "editableInReview": true, "initialQuantities": { "default": 2 }
     }
   ],

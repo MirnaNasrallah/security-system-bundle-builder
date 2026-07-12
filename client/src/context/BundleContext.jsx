@@ -28,7 +28,14 @@ function BundleProvider({ catalog, children, initialState }) {
       const item = itemsById.get(productId)
       if (!item) return []
       const variant = item.variants?.find((entry) => entry.id === variantId)
-      return [{ ...item, variantId, variantLabel: variant?.label, quantity, key }]
+      return [{
+        ...item,
+        image: variant?.thumbnail || variant?.image || item.image,
+        variantId,
+        variantLabel: variant?.label,
+        quantity,
+        key,
+      }]
     })
   }, [itemsById, state.quantities])
 

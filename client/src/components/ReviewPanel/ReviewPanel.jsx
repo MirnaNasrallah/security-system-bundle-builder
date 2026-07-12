@@ -55,10 +55,11 @@ function ReviewPanel() {
           />
         </div>
         <div className="guarantee-total">
-          <div className="guarantee-badge">
-            <strong>100%</strong>
-            <span>{guarantee.label}</span>
-          </div>
+          <img
+            className="guarantee-badge"
+            src="/images/991e1497c0a1c9e070778c8eb0abab6e98ddb05a.png"
+            alt={guarantee.label}
+          />
           <div className="total-block">
             <span className="financing-pill">{financingText}</span>
             <PriceTag price={totals.current} compareAtPrice={totals.original} large />
@@ -74,7 +75,7 @@ function ReviewPanel() {
         <button className="save-button" type="button" onClick={handleSave}>
           Save my system for later
         </button>
-        <p className="action-message" aria-live="polite">{message}</p>
+        {message && <p className="action-message" aria-live="polite">{message}</p>}
       </div>
     </div>
   )

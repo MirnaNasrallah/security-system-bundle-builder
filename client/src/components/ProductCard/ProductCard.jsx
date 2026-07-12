@@ -9,6 +9,8 @@ function ProductCard({ product }) {
   const { state, setQuantity, setActiveVariant } = useBundle()
   const variantId = state.activeVariant[product.id] || product.defaultVariantId || 'default'
   const quantity = state.quantities[`${product.id}::${variantId}`] || 0
+  const activeVariant = product.variants?.find((variant) => variant.id === variantId)
+  const image = activeVariant?.image || product.image
 
   const increment = useCallback(
     () => setQuantity(product.id, variantId, quantity + 1),
@@ -28,7 +30,7 @@ function ProductCard({ product }) {
       {product.badge && <Badge>{product.badge.label}</Badge>}
       <img
         className="product-card__image"
-        src={product.image}
+        src={image}
         alt=""
         loading="lazy"
         onError={(event) => {
